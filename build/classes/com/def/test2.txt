@@ -1,0 +1,2 @@
+ok:khi
+ko:hello
