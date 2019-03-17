@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile</title>
+</head>
+ <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <meta charset=utf-8 />
+<style type="text/css">
+  
+.container {
+ width: 400px;
+ height: 500px;
+ 
+
+}	
+.container1 {
+  padding: 16px;
+  padding-bottom: 20px;
+
+}
+input[type=text], input[type=password],input[list],input[type=Number]  {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+input[type=button] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  float: right;
+  margin: 8px 8px;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+}
+.save, .cancel {
+display:none;
+}
+
+</style>
+<body>
+ <div class="al" align="center">
+	<div class="container" >
+<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive"  alt="Image" style="width:200px;height: 300px; "></div>
+ 
+<div class="container1">
+      <label for="fname"><b>First Name</b></label>
+      <input id="fname" type="text" placeholder=" First Name"name="fname" disabled="true">
+      <label for="lname"><b>Last Name</b></label>
+      <input id="lname" type="text" placeholder=" Last Name"name="lname" disabled="true">
+      <label for="pname"><b>Phone Number</b></label>
+      <input id="pname" type="Number" maxlength="10" placeholder="Enter Phone Number" name="pname" disabled="true" >
+      <label for="state"><b> State</b></label>
+      <input id="state" type="text" name="state" placeholder="State" disabled="true" >
+      <label for="pcode"><b>Pincode</b></label>
+      <input id="pcode" type="Number" name="pcode" placeholder="Pincode" disabled="true">
+  </div>
+  <div>
+  	<input class="edit" type="button" value="Edit" />
+    <input class="save" type="button" value="Save" /> 
+    <input class="cancel" type="button" value="Cancel" />
+  	
+ 
+  </div>
+  </div>
+
+<script type="text/javascript">
+	       $('.edit').click(function() {
+    $(this).hide();
+    $(this).siblings('.save, .cancel').show();
+   edit();
+});
+$('.cancel').click(function() {
+    $(this).siblings('.edit').show();
+    $(this).siblings('.save').hide();
+    $(this).hide();
+    disable();
+});
+$('.save').click(function() {
+    $(this).siblings('.edit').show();
+    $(this).siblings('.cancel').hide();
+    $(this).hide();
+    disable();
+});
+</script>
+<script type="text/javascript">
+	
+	function edit()
+	{
+       document.getElementById("fname").disabled = false;
+       document.getElementById("lname").disabled = false;
+       document.getElementById("pname").disabled = false;
+       document.getElementById("state").disabled = false;
+       document.getElementById("pcode").disabled = false;
+       document.getElementById("ed").innerHTML="Save";
+   }
+   function disable()
+	{
+       document.getElementById("fname").disabled = true;
+       document.getElementById("lname").disabled = true;
+       document.getElementById("pname").disabled = true;
+       document.getElementById("state").disabled = true;
+       document.getElementById("pcode").disabled = true;
+       document.getElementById("ed").innerHTML="Save";
+   }
+</script>
+ 
+</body>
+</html>
